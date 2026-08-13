@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(docker info *)",
+      "Bash(python3 -m py_compile app/config.py app/db.py scripts/setup_capella.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" \"https://docs.couchbase.com/cloud/app-services/references/_attachments/admin.overlaid.yaml\" -o /tmp/admin.yaml)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

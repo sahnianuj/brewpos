@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Pickup Board - Brew POS Demo{% endblock %}
+{% block content %}
+<h1>Pickup Board</h1>
+<div class="controls-row">
+  <label>Store
+    <select id="storeSelect"></select>
+  </label>
+</div>
+<div id="board" class="grid board-grid"></div>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="/static/js/pickup.js"></script>
+{% endblock %}

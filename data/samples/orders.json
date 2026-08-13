@@ -1,0 +1,315 @@
+[
+  {
+    "_id": "order::10492::20260812::8801",
+    "type": "order",
+    "orderId": "ORD-10492-8801",
+    "storeId": "10492",
+    "customerId": "cust_99214",
+    "employeeId": "cashier_128",
+    "employeeName": "Morgan Davis",
+    "channelOrigin": "POS_REGISTER_1",
+    "orderStatus": "PAID",
+    "payment": {
+      "status": "COMPLETED",
+      "method": "STARBUCKS_CARD",
+      "amountPaid": 10.97,
+      "transactionId": "TXN-9981241"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_001",
+        "name": "Caffe Latte",
+        "size": "GRANDE",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "QUEUED",
+        "quantity": 1,
+        "customizations": [
+          { "type": "MILK_TYPE", "value": "OAT_MILK", "label": "Oat Milk", "extraCharge": 0.8 },
+          { "type": "ESPRESSO_SHOTS", "value": "EXTRA_SHOT", "label": "Extra Shot", "extraCharge": 0.9 }
+        ],
+        "unitPrice": 6.65,
+        "lineTotal": 6.65
+      },
+      {
+        "lineItemId": "line_2",
+        "itemId": "FOOD_104",
+        "name": "Blueberry Muffin",
+        "size": "ONE_SIZE",
+        "category": "FOOD",
+        "station": "WARMING_STATION",
+        "status": "QUEUED",
+        "quantity": 1,
+        "customizations": [
+          { "type": "WARMING", "value": "UNWARMED", "label": "Unwarmed", "extraCharge": 0.0 }
+        ],
+        "unitPrice": 3.45,
+        "lineTotal": 3.45
+      }
+    ],
+    "subtotal": 10.1,
+    "tax": 0.87,
+    "total": 10.97,
+    "createdAt": "2026-08-12T08:35:00Z",
+    "updatedAt": "2026-08-12T08:35:00Z",
+    "readyAt": null,
+    "completedAt": null,
+    "cancelReason": null,
+    "channels": ["store-10492", "store-10492-espresso", "store-10492-warming", "user-cust_99214"]
+  },
+  {
+    "_id": "order::10492::20260812::8802",
+    "type": "order",
+    "orderId": "ORD-10492-8802",
+    "storeId": "10492",
+    "customerId": null,
+    "employeeId": "cashier_128",
+    "employeeName": "Morgan Davis",
+    "channelOrigin": "POS_REGISTER_2",
+    "orderStatus": "IN_PREPARATION",
+    "payment": {
+      "status": "COMPLETED",
+      "method": "CREDIT_CARD",
+      "amountPaid": 10.86,
+      "transactionId": "TXN-9981242"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_009",
+        "name": "Caramel Frappuccino",
+        "size": "VENTI",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "IN_PREPARATION",
+        "quantity": 1,
+        "customizations": [
+          { "type": "MILK_TYPE", "value": "OAT_MILK", "label": "Oat Milk", "extraCharge": 0.8 }
+        ],
+        "unitPrice": 6.75,
+        "lineTotal": 6.75
+      },
+      {
+        "lineItemId": "line_2",
+        "itemId": "FOOD_103",
+        "name": "Butter Croissant",
+        "size": "ONE_SIZE",
+        "category": "FOOD",
+        "station": "WARMING_STATION",
+        "status": "READY",
+        "quantity": 1,
+        "customizations": [
+          { "type": "WARMING", "value": "WARMED", "label": "Warmed", "extraCharge": 0.0 }
+        ],
+        "unitPrice": 3.25,
+        "lineTotal": 3.25
+      }
+    ],
+    "subtotal": 10.0,
+    "tax": 0.86,
+    "total": 10.86,
+    "createdAt": "2026-08-12T08:41:00Z",
+    "updatedAt": "2026-08-12T08:43:30Z",
+    "readyAt": null,
+    "completedAt": null,
+    "cancelReason": null,
+    "channels": ["store-10492", "store-10492-espresso", "store-10492-warming"]
+  },
+  {
+    "_id": "order::10492::20260812::8803",
+    "type": "order",
+    "orderId": "ORD-10492-8803",
+    "storeId": "10492",
+    "customerId": "cust_10045",
+    "employeeId": null,
+    "employeeName": null,
+    "channelOrigin": "MOBILE_APP",
+    "orderStatus": "READY",
+    "payment": {
+      "status": "COMPLETED",
+      "method": "STARBUCKS_CARD",
+      "amountPaid": 10.32,
+      "transactionId": "TXN-9981243"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_007",
+        "name": "Cold Brew",
+        "size": "GRANDE",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "READY",
+        "quantity": 1,
+        "customizations": [],
+        "unitPrice": 4.05,
+        "lineTotal": 4.05
+      },
+      {
+        "lineItemId": "line_2",
+        "itemId": "FOOD_101",
+        "name": "Bacon, Gouda & Egg Sandwich",
+        "size": "ONE_SIZE",
+        "category": "FOOD",
+        "station": "WARMING_STATION",
+        "status": "READY",
+        "quantity": 1,
+        "customizations": [
+          { "type": "WARMING", "value": "WARMED", "label": "Warmed", "extraCharge": 0.0 }
+        ],
+        "unitPrice": 5.45,
+        "lineTotal": 5.45
+      }
+    ],
+    "subtotal": 9.5,
+    "tax": 0.82,
+    "total": 10.32,
+    "createdAt": "2026-08-12T08:22:00Z",
+    "updatedAt": "2026-08-12T08:29:10Z",
+    "readyAt": "2026-08-12T08:29:10Z",
+    "completedAt": null,
+    "cancelReason": null,
+    "channels": ["store-10492", "store-10492-espresso", "store-10492-warming", "user-cust_10045"]
+  },
+  {
+    "_id": "order::10492::20260812::8804",
+    "type": "order",
+    "orderId": "ORD-10492-8804",
+    "storeId": "10492",
+    "customerId": null,
+    "employeeId": "cashier_128",
+    "employeeName": "Morgan Davis",
+    "channelOrigin": "POS_REGISTER_1",
+    "orderStatus": "COMPLETED",
+    "payment": {
+      "status": "COMPLETED",
+      "method": "CASH",
+      "amountPaid": 2.66,
+      "transactionId": "TXN-9981200"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_006",
+        "name": "Pike Place Roast",
+        "size": "TALL",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "READY",
+        "quantity": 1,
+        "customizations": [],
+        "unitPrice": 2.45,
+        "lineTotal": 2.45
+      }
+    ],
+    "subtotal": 2.45,
+    "tax": 0.21,
+    "total": 2.66,
+    "createdAt": "2026-08-12T07:58:00Z",
+    "updatedAt": "2026-08-12T08:03:40Z",
+    "readyAt": "2026-08-12T08:01:15Z",
+    "completedAt": "2026-08-12T08:03:40Z",
+    "cancelReason": null,
+    "channels": ["store-10492", "store-10492-espresso"]
+  },
+  {
+    "_id": "order::20873::20260812::4501",
+    "type": "order",
+    "orderId": "ORD-20873-4501",
+    "storeId": "20873",
+    "customerId": "cust_55821",
+    "employeeId": null,
+    "employeeName": null,
+    "channelOrigin": "MOBILE_APP",
+    "orderStatus": "PAID",
+    "payment": {
+      "status": "COMPLETED",
+      "method": "STARBUCKS_CARD",
+      "amountPaid": 12.13,
+      "transactionId": "TXN-2231098"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_011",
+        "name": "Chai Tea Latte",
+        "size": "GRANDE",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "QUEUED",
+        "quantity": 1,
+        "customizations": [
+          { "type": "MILK_TYPE", "value": "OAT_MILK", "label": "Oat Milk", "extraCharge": 0.8 }
+        ],
+        "unitPrice": 5.75,
+        "lineTotal": 5.75
+      },
+      {
+        "lineItemId": "line_2",
+        "itemId": "FOOD_102",
+        "name": "Turkey Bacon & Cheddar Sandwich",
+        "size": "ONE_SIZE",
+        "category": "FOOD",
+        "station": "WARMING_STATION",
+        "status": "QUEUED",
+        "quantity": 1,
+        "customizations": [
+          { "type": "WARMING", "value": "WARMED", "label": "Warmed", "extraCharge": 0.0 }
+        ],
+        "unitPrice": 5.25,
+        "lineTotal": 5.25
+      }
+    ],
+    "subtotal": 11.0,
+    "tax": 1.13,
+    "total": 12.13,
+    "createdAt": "2026-08-12T09:05:00Z",
+    "updatedAt": "2026-08-12T09:05:00Z",
+    "readyAt": null,
+    "completedAt": null,
+    "cancelReason": null,
+    "channels": ["store-20873", "store-20873-espresso", "store-20873-warming", "user-cust_55821"]
+  },
+  {
+    "_id": "order::10492::20260812::8805",
+    "type": "order",
+    "orderId": "ORD-10492-8805",
+    "storeId": "10492",
+    "customerId": "cust_10045",
+    "employeeId": "cashier_128",
+    "employeeName": "Morgan Davis",
+    "channelOrigin": "POS_REGISTER_1",
+    "orderStatus": "CANCELLED",
+    "payment": {
+      "status": "REFUNDED",
+      "method": "STARBUCKS_CARD",
+      "amountPaid": 0.0,
+      "transactionId": "TXN-9981199"
+    },
+    "items": [
+      {
+        "lineItemId": "line_1",
+        "itemId": "DRINK_012",
+        "name": "Matcha Latte",
+        "size": "VENTI",
+        "category": "BEVERAGE",
+        "station": "ESPRESSO_BAR",
+        "status": "QUEUED",
+        "quantity": 1,
+        "customizations": [],
+        "unitPrice": 5.75,
+        "lineTotal": 5.75
+      }
+    ],
+    "subtotal": 5.75,
+    "tax": 0.5,
+    "total": 6.25,
+    "createdAt": "2026-08-12T07:50:00Z",
+    "updatedAt": "2026-08-12T07:51:20Z",
+    "readyAt": null,
+    "completedAt": null,
+    "cancelReason": "Customer changed mind before preparation started",
+    "channels": ["store-10492", "store-10492-espresso", "user-cust_10045"]
+  }
+]

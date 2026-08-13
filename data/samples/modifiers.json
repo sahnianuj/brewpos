@@ -1,0 +1,30 @@
+[
+  { "_id": "modifier::MILK_WHOLE", "type": "modifier", "modifierId": "MILK_WHOLE", "modifierType": "MILK_TYPE", "label": "Whole Milk", "value": "WHOLE_MILK", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::MILK_TWO_PERCENT", "type": "modifier", "modifierId": "MILK_TWO_PERCENT", "modifierType": "MILK_TYPE", "label": "2% Milk", "value": "TWO_PERCENT_MILK", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::MILK_NONFAT", "type": "modifier", "modifierId": "MILK_NONFAT", "modifierType": "MILK_TYPE", "label": "Nonfat Milk", "value": "NONFAT_MILK", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::MILK_OAT", "type": "modifier", "modifierId": "MILK_OAT", "modifierType": "MILK_TYPE", "label": "Oat Milk", "value": "OAT_MILK", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::MILK_ALMOND", "type": "modifier", "modifierId": "MILK_ALMOND", "modifierType": "MILK_TYPE", "label": "Almond Milk", "value": "ALMOND_MILK", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::MILK_COCONUT", "type": "modifier", "modifierId": "MILK_COCONUT", "modifierType": "MILK_TYPE", "label": "Coconut Milk", "value": "COCONUT_MILK", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+
+  { "_id": "modifier::SYR_VANILLA", "type": "modifier", "modifierId": "SYR_VANILLA", "modifierType": "SYRUP", "label": "Vanilla Syrup (extra pump)", "value": "VANILLA", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SYR_CARAMEL", "type": "modifier", "modifierId": "SYR_CARAMEL", "modifierType": "SYRUP", "label": "Caramel Syrup (extra pump)", "value": "CARAMEL", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SYR_HAZELNUT", "type": "modifier", "modifierId": "SYR_HAZELNUT", "modifierType": "SYRUP", "label": "Hazelnut Syrup (extra pump)", "value": "HAZELNUT", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SYR_TOFFEE_NUT", "type": "modifier", "modifierId": "SYR_TOFFEE_NUT", "modifierType": "SYRUP", "label": "Toffee Nut Syrup (extra pump)", "value": "TOFFEE_NUT", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SYR_CINNAMON_DOLCE", "type": "modifier", "modifierId": "SYR_CINNAMON_DOLCE", "modifierType": "SYRUP", "label": "Cinnamon Dolce Syrup (extra pump)", "value": "CINNAMON_DOLCE", "extraCharge": 0.8, "applicableCategories": ["BEVERAGE"] },
+
+  { "_id": "modifier::SHOT_EXTRA", "type": "modifier", "modifierId": "SHOT_EXTRA", "modifierType": "ESPRESSO_SHOTS", "label": "Extra Shot", "value": "EXTRA_SHOT", "extraCharge": 0.9, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SHOT_DECAF", "type": "modifier", "modifierId": "SHOT_DECAF", "modifierType": "ESPRESSO_SHOTS", "label": "Make it Decaf", "value": "DECAF", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::SHOT_LIGHT", "type": "modifier", "modifierId": "SHOT_LIGHT", "modifierType": "ESPRESSO_SHOTS", "label": "Light Shot", "value": "LIGHT_SHOT", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+
+  { "_id": "modifier::TOP_WHIPPED_CREAM", "type": "modifier", "modifierId": "TOP_WHIPPED_CREAM", "modifierType": "TOPPING", "label": "Whipped Cream", "value": "WHIPPED_CREAM", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::TOP_CARAMEL_DRIZZLE", "type": "modifier", "modifierId": "TOP_CARAMEL_DRIZZLE", "modifierType": "TOPPING", "label": "Caramel Drizzle", "value": "CARAMEL_DRIZZLE", "extraCharge": 0.6, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::TOP_MOCHA_DRIZZLE", "type": "modifier", "modifierId": "TOP_MOCHA_DRIZZLE", "modifierType": "TOPPING", "label": "Mocha Drizzle", "value": "MOCHA_DRIZZLE", "extraCharge": 0.6, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::TOP_CINNAMON_POWDER", "type": "modifier", "modifierId": "TOP_CINNAMON_POWDER", "modifierType": "TOPPING", "label": "Cinnamon Powder", "value": "CINNAMON_POWDER", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+
+  { "_id": "modifier::ICE_LIGHT", "type": "modifier", "modifierId": "ICE_LIGHT", "modifierType": "ICE_LEVEL", "label": "Light Ice", "value": "LIGHT_ICE", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::ICE_NONE", "type": "modifier", "modifierId": "ICE_NONE", "modifierType": "ICE_LEVEL", "label": "No Ice", "value": "NO_ICE", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+  { "_id": "modifier::ICE_EXTRA", "type": "modifier", "modifierId": "ICE_EXTRA", "modifierType": "ICE_LEVEL", "label": "Extra Ice", "value": "EXTRA_ICE", "extraCharge": 0.0, "applicableCategories": ["BEVERAGE"] },
+
+  { "_id": "modifier::WARM_YES", "type": "modifier", "modifierId": "WARM_YES", "modifierType": "WARMING", "label": "Warmed", "value": "WARMED", "extraCharge": 0.0, "applicableCategories": ["FOOD"] },
+  { "_id": "modifier::WARM_NO", "type": "modifier", "modifierId": "WARM_NO", "modifierType": "WARMING", "label": "Unwarmed", "value": "UNWARMED", "extraCharge": 0.0, "applicableCategories": ["FOOD"] }
+]

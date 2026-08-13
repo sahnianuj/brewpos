@@ -1,0 +1,61 @@
+[
+  {
+    "_id": "customer::cust_99214",
+    "type": "customer",
+    "customerId": "cust_99214",
+    "displayName": "Jordan Lee",
+    "email": "jordan.lee@example.com",
+    "phone": "+1-415-555-0110",
+    "homeStoreId": "10492",
+    "loyalty": {
+      "tier": "GOLD",
+      "starsBalance": 312,
+      "starsToNextReward": 13,
+      "memberSince": "2021-05-02"
+    },
+    "paymentMethods": [
+      { "type": "STARBUCKS_CARD", "cardId": "SC-4471-8823", "balance": 42.1, "isDefault": true }
+    ],
+    "channels": ["user-cust_99214"]
+  },
+  {
+    "_id": "customer::cust_55821",
+    "type": "customer",
+    "customerId": "cust_55821",
+    "displayName": "Priya Nair",
+    "email": "priya.nair@example.com",
+    "phone": "+1-206-555-0134",
+    "homeStoreId": "20873",
+    "loyalty": {
+      "tier": "GREEN",
+      "starsBalance": 45,
+      "starsToNextReward": 280,
+      "memberSince": "2024-11-19"
+    },
+    "paymentMethods": [
+      { "type": "STARBUCKS_CARD", "cardId": "SC-7723-1190", "balance": 5.25, "isDefault": true },
+      { "type": "CREDIT_CARD", "cardId": "VISA-...4471", "isDefault": false }
+    ],
+    "channels": ["user-cust_55821"]
+  },
+  {
+    "_id": "customer::cust_10045",
+    "type": "customer",
+    "customerId": "cust_10045",
+    "displayName": "Sam Rivera",
+    "email": "sam.rivera@example.com",
+    "phone": "+1-415-555-0199",
+    "homeStoreId": "10492",
+    "loyalty": {
+      "tier": "GOLD",
+      "starsBalance": 1180,
+      "starsToNextReward": 0,
+      "memberSince": "2019-08-27"
+    },
+    "paymentMethods": [
+      { "type": "STARBUCKS_CARD", "cardId": "SC-2290-4456", "balance": 0.0, "isDefault": true },
+      { "type": "APPLE_PAY", "cardId": "APAY-...", "isDefault": false }
+    ],
+    "channels": ["user-cust_10045"]
+  }
+]

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Register - Brew POS Demo{% endblock %}
+{% block content %}
+<h1>Register</h1>
+
+<div class="controls-row">
+  <label>Store
+    <select id="storeSelect"></select>
+  </label>
+  <label>Customer (optional)
+    <select id="customerSelect">
+      <option value="">Guest</option>
+    </select>
+  </label>
+  <label id="guestNameLabel">Name for order <span id="guestNameRequiredMark">*</span>
+    <input type="text" id="guestNameInput" placeholder="e.g. Sam" maxlength="20" style="width:8rem" required>
+  </label>
+  <label>Cashier
+    <select id="employeeSelect"></select>
+  </label>
+</div>
+
+<div class="pos-layout">
+  <div>
+    <div id="categoryTabs" style="margin-bottom:0.75rem"></div>
+    <div id="menuGrid" class="grid menu-grid"></div>
+  </div>
+
+  <div class="card" style="position:sticky; top:1rem">
+    <h2>Current Order</h2>
+    <div id="cartLines"><p class="muted">Cart is empty.</p></div>
+    <div id="cartTotals"></div>
+    <button id="submitOrderBtn" style="width:100%; margin-top:0.75rem" disabled>Submit Order</button>
+    <div id="orderResult" style="margin-top:0.75rem"></div>
+  </div>
+</div>
+
+<div id="customizeModalRoot"></div>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="/static/js/pos.js"></script>
+{% endblock %}

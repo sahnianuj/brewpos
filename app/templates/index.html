@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Brew POS Demo{% endblock %}
+{% block content %}
+<div class="hero">
+  <h1 style="margin-bottom:0.4rem">Brew POS Demo</h1>
+  <p style="max-width:640px">
+    A store register, two kitchen display screens (espresso bar + warming station),
+    a pickup board, and a manager dashboard - each running its own local
+    <strong>Couchbase Lite for JavaScript</strong> database in the browser, kept live
+    by <strong>Capella App Services</strong> via channel-scoped replication. No
+    polling: every screen updates the moment a synced write lands.
+  </p>
+  <a class="button-link" href="/pos">Open Register →</a>
+  <a class="button-link" href="/kds/espresso">Espresso KDS →</a>
+  <a class="button-link" href="/kds/warming">Warming KDS →</a>
+  <a class="button-link" href="/pickup">Pickup Board →</a>
+  <a class="button-link" href="/manager">Manager Dashboard →</a>
+</div>
+
+<div class="card" style="margin-bottom:1rem">
+  <h2>Suggested demo flow</h2>
+  <ol>
+    <li>Open <strong>Register</strong>, <strong>Espresso KDS</strong>, <strong>Warming KDS</strong> and
+      <strong>Pickup Board</strong> in separate browser tabs (or windows, side by side) - each
+      one is its own independent Couchbase Lite database and Replicator.</li>
+    <li>On the Register, add a drink and a food item to a cart with a few customizations, then submit the order.</li>
+    <li>Watch the drink line item appear live on the Espresso KDS and the food line item appear live on the
+      Warming KDS - each only ever syncs its own station's channel
+      (<code>store-{id}-espresso</code> / <code>store-{id}-warming</code>), so neither screen ever even
+      receives the other's documents.</li>
+    <li>Advance each line item through <em>Start</em> → <em>Ready</em>. Once every item on the order is ready,
+      the whole order flips to <strong>READY</strong> and appears live on the Pickup Board
+      (<code>store-{id}</code> channel).</li>
+    <li>Mark it picked up on the Pickup Board, then check the <strong>Manager Dashboard</strong> for today's
+      order volume and revenue.</li>
+  </ol>
+  <p class="muted">
+    Every write happens against the local Couchbase Lite database first, then replicates to Capella App
+    Services in the background - the same architecture a real offline-capable register or KDS terminal
+    would use. See <code>sync-gateway/</code> for the channel design and sync functions, and
+    <code>app/static/js/cbl/</code> for the client code.
+  </p>
+</div>
+
+<div class="card">
+  <h2>If a page shows an amber "App Services isn't configured" banner</h2>
+  <p>
+    That's expected until <code>APP_SERVICES_URL</code>, <code>APP_SERVICES_USERNAME</code> and
+    <code>APP_SERVICES_PASSWORD</code> are set in <code>.env</code> (see
+    <code>sync-gateway/app-services-setup.md</code>) and the app is restarted. Each page still works
+    against its local, unsynced database in the meantime - it just won't see writes from other tabs
+    until App Services is live.
+  </p>
+</div>
+{% endblock %}

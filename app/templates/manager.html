@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Manager Dashboard - Brew POS Demo{% endblock %}
+{% block content %}
+<h1>Manager Dashboard</h1>
+<div class="controls-row">
+  <label>Store
+    <select id="storeSelect"></select>
+  </label>
+</div>
+
+<div class="stat-row" id="stats"></div>
+
+<div class="card">
+  <h2>Recent Orders</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Order</th><th>Status</th><th>Items</th><th>Total</th><th>Cashier</th><th>Channel</th><th>Placed</th></tr>
+      </thead>
+      <tbody id="ordersBody"></tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="/static/js/manager.js"></script>
+{% endblock %}

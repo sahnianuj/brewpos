@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Brew POS Demo{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">☕ Brew POS Demo</a>
+    <nav>
+      <a href="/pos">Register</a>
+      <a href="/kds/espresso">Espresso KDS</a>
+      <a href="/kds/warming">Warming KDS</a>
+      <a href="/pickup">Pickup Board</a>
+      <a href="/manager">Manager</a>
+    </nav>
+  </header>
+  <div id="syncBanner" class="sync-banner" hidden></div>
+  <main class="page">
+    {% block content %}{% endblock %}
+  </main>
+  <script>
+    window.DEFAULT_STORE_ID = {{ default_store_id | tojson }};
+    // Consumed by app/static/js/cbl/replication.js. Credentials are visible
+    // in page source - fine for this demo (a single shared, low-privilege
+    // demo credential), NOT a pattern for a real deployment.
+    window.APP_SERVICES_CONFIG = {{ app_services_config | tojson }};
+  </script>
+  <script src="/static/js/api.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

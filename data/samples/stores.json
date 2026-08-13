@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "store::10492",
+    "type": "store",
+    "storeId": "10492",
+    "name": "Market St & 5th Ave",
+    "address": {
+      "line1": "845 Market St",
+      "city": "San Francisco",
+      "state": "CA",
+      "postalCode": "94103",
+      "country": "US"
+    },
+    "timeZone": "America/Los_Angeles",
+    "phone": "+1-415-555-0142",
+    "isActive": true,
+    "stations": ["ESPRESSO_BAR", "WARMING_STATION"],
+    "channels": ["store-10492"]
+  },
+  {
+    "_id": "store::20873",
+    "type": "store",
+    "storeId": "20873",
+    "name": "Pike & 4th",
+    "address": {
+      "line1": "2100 4th Ave",
+      "city": "Seattle",
+      "state": "WA",
+      "postalCode": "98121",
+      "country": "US"
+    },
+    "timeZone": "America/Los_Angeles",
+    "phone": "+1-206-555-0198",
+    "isActive": true,
+    "stations": ["ESPRESSO_BAR", "WARMING_STATION"],
+    "channels": ["store-20873"]
+  }
+]

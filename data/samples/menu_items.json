@@ -1,0 +1,1069 @@
+[
+  {
+    "_id": "menu_item::DRINK_001",
+    "type": "menu_item",
+    "itemId": "DRINK_001",
+    "name": "Caffe Latte",
+    "category": "BEVERAGE",
+    "subCategory": "ESPRESSO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.45,
+      "GRANDE": 4.95,
+      "VENTI": 5.45
+    },
+    "recipe": {
+      "baseEspressoShots": {
+        "TALL": 1,
+        "GRANDE": 2,
+        "VENTI": 2
+      },
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "ESPRESSO_BEANS",
+          "unit": "SHOT",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 2,
+            "VENTI": 2
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 6,
+            "GRANDE": 8,
+            "VENTI": 10
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "SYRUP",
+      "ESPRESSO_SHOTS",
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Caffe+Latte&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_002",
+    "type": "menu_item",
+    "itemId": "DRINK_002",
+    "name": "Cappuccino",
+    "category": "BEVERAGE",
+    "subCategory": "ESPRESSO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.45,
+      "GRANDE": 4.95,
+      "VENTI": 5.45
+    },
+    "recipe": {
+      "baseEspressoShots": {
+        "TALL": 1,
+        "GRANDE": 2,
+        "VENTI": 2
+      },
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "ESPRESSO_BEANS",
+          "unit": "SHOT",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 2,
+            "VENTI": 2
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 4,
+            "GRANDE": 6,
+            "VENTI": 8
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "SYRUP",
+      "ESPRESSO_SHOTS"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Cappuccino&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_003",
+    "type": "menu_item",
+    "itemId": "DRINK_003",
+    "name": "Caramel Macchiato",
+    "category": "BEVERAGE",
+    "subCategory": "ESPRESSO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.95,
+      "GRANDE": 5.45,
+      "VENTI": 5.95
+    },
+    "recipe": {
+      "baseEspressoShots": {
+        "TALL": 1,
+        "GRANDE": 2,
+        "VENTI": 2
+      },
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "ESPRESSO_BEANS",
+          "unit": "SHOT",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 2,
+            "VENTI": 2
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 6,
+            "GRANDE": 8,
+            "VENTI": 10
+          }
+        },
+        {
+          "ingredientId": "VANILLA_SYRUP",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "CARAMEL_DRIZZLE",
+          "unit": "DRIZZLE",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "ESPRESSO_SHOTS",
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Caramel%5CnMacchiato&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_004",
+    "type": "menu_item",
+    "itemId": "DRINK_004",
+    "name": "Iced Caramel Macchiato",
+    "category": "BEVERAGE",
+    "subCategory": "ESPRESSO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.95,
+      "GRANDE": 5.45,
+      "VENTI": 5.95
+    },
+    "recipe": {
+      "baseEspressoShots": {
+        "TALL": 1,
+        "GRANDE": 2,
+        "VENTI": 2
+      },
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "ESPRESSO_BEANS",
+          "unit": "SHOT",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 2,
+            "VENTI": 2
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 6,
+            "GRANDE": 8,
+            "VENTI": 10
+          }
+        },
+        {
+          "ingredientId": "VANILLA_SYRUP",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "CARAMEL_DRIZZLE",
+          "unit": "DRIZZLE",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "ESPRESSO_SHOTS",
+      "ICE_LEVEL",
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Iced+Caramel%5CnMacchiato&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_005",
+    "type": "menu_item",
+    "itemId": "DRINK_005",
+    "name": "Vanilla Latte",
+    "category": "BEVERAGE",
+    "subCategory": "ESPRESSO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.75,
+      "GRANDE": 5.25,
+      "VENTI": 5.75
+    },
+    "recipe": {
+      "baseEspressoShots": {
+        "TALL": 1,
+        "GRANDE": 2,
+        "VENTI": 2
+      },
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "ESPRESSO_BEANS",
+          "unit": "SHOT",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 2,
+            "VENTI": 2
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 6,
+            "GRANDE": 8,
+            "VENTI": 10
+          }
+        },
+        {
+          "ingredientId": "VANILLA_SYRUP",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 3,
+            "GRANDE": 4,
+            "VENTI": 5
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "SYRUP",
+      "ESPRESSO_SHOTS"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Vanilla+Latte&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_006",
+    "type": "menu_item",
+    "itemId": "DRINK_006",
+    "name": "Pike Place Roast",
+    "category": "BEVERAGE",
+    "subCategory": "BREWED_COFFEE",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 2.45,
+      "GRANDE": 2.65,
+      "VENTI": 2.95
+    },
+    "recipe": {
+      "defaultMilk": "NONE",
+      "ingredients": [
+        {
+          "ingredientId": "PIKE_PLACE_COFFEE_BEANS",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 12,
+            "GRANDE": 16,
+            "VENTI": 20
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Pike+Place%5CnRoast&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_007",
+    "type": "menu_item",
+    "itemId": "DRINK_007",
+    "name": "Cold Brew",
+    "category": "BEVERAGE",
+    "subCategory": "COLD_BREW",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 3.65,
+      "GRANDE": 4.05,
+      "VENTI": 4.45
+    },
+    "recipe": {
+      "defaultMilk": "NONE",
+      "ingredients": [
+        {
+          "ingredientId": "COLD_BREW_CONCENTRATE",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 9,
+            "GRANDE": 12,
+            "VENTI": 15
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "SYRUP",
+      "ICE_LEVEL"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Cold+Brew&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_008",
+    "type": "menu_item",
+    "itemId": "DRINK_008",
+    "name": "Vanilla Sweet Cream Cold Brew",
+    "category": "BEVERAGE",
+    "subCategory": "COLD_BREW",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.45,
+      "GRANDE": 4.95,
+      "VENTI": 5.45
+    },
+    "recipe": {
+      "defaultMilk": "NONE",
+      "ingredients": [
+        {
+          "ingredientId": "COLD_BREW_CONCENTRATE",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 9,
+            "GRANDE": 12,
+            "VENTI": 15
+          }
+        },
+        {
+          "ingredientId": "VANILLA_SYRUP",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "WHIPPED_CREAM",
+          "unit": "SCOOP",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "ICE_LEVEL",
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Vanilla+Sweet%5CnCream+Cold%5CnBrew&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_009",
+    "type": "menu_item",
+    "itemId": "DRINK_009",
+    "name": "Caramel Frappuccino",
+    "category": "BEVERAGE",
+    "subCategory": "FRAPPUCCINO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.95,
+      "GRANDE": 5.45,
+      "VENTI": 5.95
+    },
+    "recipe": {
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "FRAPPUCCINO_ROAST_BASE",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "CARAMEL_SYRUP",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "WHIPPED_CREAM",
+          "unit": "SCOOP",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        },
+        {
+          "ingredientId": "CARAMEL_DRIZZLE",
+          "unit": "DRIZZLE",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Caramel%5CnFrappuccino&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_010",
+    "type": "menu_item",
+    "itemId": "DRINK_010",
+    "name": "Mocha Frappuccino",
+    "category": "BEVERAGE",
+    "subCategory": "FRAPPUCCINO",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.95,
+      "GRANDE": 5.45,
+      "VENTI": 5.95
+    },
+    "recipe": {
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "FRAPPUCCINO_ROAST_BASE",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "MOCHA_DRIZZLE",
+          "unit": "PUMP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "WHIPPED_CREAM",
+          "unit": "SCOOP",
+          "qtyBySize": {
+            "TALL": 1,
+            "GRANDE": 1,
+            "VENTI": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "TOPPING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Mocha%5CnFrappuccino&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_011",
+    "type": "menu_item",
+    "itemId": "DRINK_011",
+    "name": "Chai Tea Latte",
+    "category": "BEVERAGE",
+    "subCategory": "TEA",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.45,
+      "GRANDE": 4.95,
+      "VENTI": 5.45
+    },
+    "recipe": {
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "CHAI_CONCENTRATE",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 4,
+            "GRANDE": 6,
+            "VENTI": 8
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 8,
+            "GRANDE": 10,
+            "VENTI": 12
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "ICE_LEVEL"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Chai+Tea%5CnLatte&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::DRINK_012",
+    "type": "menu_item",
+    "itemId": "DRINK_012",
+    "name": "Matcha Latte",
+    "category": "BEVERAGE",
+    "subCategory": "TEA",
+    "station": "ESPRESSO_BAR",
+    "availableSizes": [
+      "TALL",
+      "GRANDE",
+      "VENTI"
+    ],
+    "sizePricing": {
+      "TALL": 4.75,
+      "GRANDE": 5.25,
+      "VENTI": 5.75
+    },
+    "recipe": {
+      "defaultMilk": "WHOLE_MILK",
+      "ingredients": [
+        {
+          "ingredientId": "MATCHA_POWDER",
+          "unit": "SCOOP",
+          "qtyBySize": {
+            "TALL": 2,
+            "GRANDE": 3,
+            "VENTI": 4
+          }
+        },
+        {
+          "ingredientId": "WHOLE_MILK",
+          "unit": "OZ",
+          "qtyBySize": {
+            "TALL": 8,
+            "GRANDE": 10,
+            "VENTI": 12
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "MILK_TYPE",
+      "ICE_LEVEL"
+    ],
+    "imageUrl": "https://placehold.co/640x640/00704A/FFFFFF?text=Matcha+Latte&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_101",
+    "type": "menu_item",
+    "itemId": "FOOD_101",
+    "name": "Bacon, Gouda & Egg Sandwich",
+    "category": "FOOD",
+    "subCategory": "SANDWICH",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 5.45
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "BACON_GOUDA_EGG_SANDWICH",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Bacon%2C+Gouda%5Cn%26+Egg+Sandwich&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_102",
+    "type": "menu_item",
+    "itemId": "FOOD_102",
+    "name": "Turkey Bacon & Cheddar Sandwich",
+    "category": "FOOD",
+    "subCategory": "SANDWICH",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 5.25
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "TURKEY_BACON_CHEDDAR_SANDWICH",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Turkey+Bacon%5Cn%26+Cheddar+Sandwich&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_103",
+    "type": "menu_item",
+    "itemId": "FOOD_103",
+    "name": "Butter Croissant",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 3.25
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "BUTTER_CROISSANT",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Butter+Croissant&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_104",
+    "type": "menu_item",
+    "itemId": "FOOD_104",
+    "name": "Blueberry Muffin",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 3.45
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "BLUEBERRY_MUFFIN",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Blueberry+Muffin&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_105",
+    "type": "menu_item",
+    "itemId": "FOOD_105",
+    "name": "Spinach, Feta & Egg White Wrap",
+    "category": "FOOD",
+    "subCategory": "SANDWICH",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 4.65
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "SPINACH_FETA_WRAP",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Spinach%2C+Feta%5Cn%26+Egg+White%5CnWrap&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_106",
+    "type": "menu_item",
+    "itemId": "FOOD_106",
+    "name": "Chocolate Croissant",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 3.45
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "CHOCOLATE_CROISSANT",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Chocolate+Croissant&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_107",
+    "type": "menu_item",
+    "itemId": "FOOD_107",
+    "name": "Blueberry Scone",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 3.45
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "BLUEBERRY_SCONE",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Blueberry+Scone&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_108",
+    "type": "menu_item",
+    "itemId": "FOOD_108",
+    "name": "Chocolate Chip Cookie",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 2.95
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "CHOCOLATE_CHIP_COOKIE",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Chocolate+Chip%5CnCookie&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_109",
+    "type": "menu_item",
+    "itemId": "FOOD_109",
+    "name": "Birthday Cake Pop",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 2.45
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "BIRTHDAY_CAKE_POP",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Birthday+Cake%5CnPop&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_110",
+    "type": "menu_item",
+    "itemId": "FOOD_110",
+    "name": "Everything Bagel with Cream Cheese",
+    "category": "FOOD",
+    "subCategory": "BAKERY",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 3.75
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "EVERYTHING_BAGEL_CREAM_CHEESE",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Everything+Bagel%5Cnwith+Cream%5CnCheese&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_111",
+    "type": "menu_item",
+    "itemId": "FOOD_111",
+    "name": "Ham & Cheese Croissant",
+    "category": "FOOD",
+    "subCategory": "SANDWICH",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 5.15
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "HAM_CHEESE_CROISSANT",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Ham+%26+Cheese%5CnCroissant&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  },
+  {
+    "_id": "menu_item::FOOD_112",
+    "type": "menu_item",
+    "itemId": "FOOD_112",
+    "name": "Impossible Breakfast Sandwich",
+    "category": "FOOD",
+    "subCategory": "SANDWICH",
+    "station": "WARMING_STATION",
+    "availableSizes": [
+      "ONE_SIZE"
+    ],
+    "sizePricing": {
+      "ONE_SIZE": 5.95
+    },
+    "recipe": {
+      "ingredients": [
+        {
+          "ingredientId": "IMPOSSIBLE_BREAKFAST_SANDWICH",
+          "unit": "EACH",
+          "qtyBySize": {
+            "ONE_SIZE": 1
+          }
+        }
+      ]
+    },
+    "allowedCustomizations": [
+      "WARMING"
+    ],
+    "imageUrl": "https://placehold.co/640x640/1E3932/FFFFFF?text=Impossible+Breakfast%5CnSandwich&font=roboto",
+    "imageSource": "placeholder",
+    "isActive": true
+  }
+]

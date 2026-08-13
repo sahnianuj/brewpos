@@ -1,0 +1,276 @@
+:root {
+  --sbux-green: #00704a;
+  --sbux-green-dark: #1e3932;
+  --sbux-cream: #f2f0eb;
+  --sbux-gold: #cba258;
+  --ink: #1c1b1a;
+  --muted: #6b6b6b;
+  --border: #e2ddd3;
+  --card-bg: #ffffff;
+  --danger: #b3261e;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--sbux-cream);
+  color: var(--ink);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--sbux-green-dark);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.topbar .brand {
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* Couchbase Lite / App Services connection status - shown on every page. */
+.sync-banner {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+.sync-banner.warning { background: #fdecc8; color: #8a5a00; }
+.sync-banner.connecting { background: #cfe8f7; color: #0b5b82; }
+.sync-banner.error { background: #fbdcd9; color: var(--danger); }
+.sync-banner.ok { background: #d9f2e3; color: #0f6b3a; }
+
+.topbar nav a {
+  color: #d9e6de;
+  text-decoration: none;
+  margin-left: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.topbar nav a:hover { color: white; }
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+h1 { font-size: 1.5rem; margin-top: 0; }
+h2 { font-size: 1.15rem; color: var(--sbux-green-dark); }
+
+/* Shared row of filter/selector controls (store, cashier, etc.) at the top
+   of a page - wraps onto multiple lines instead of overflowing on narrow
+   windows. */
+.controls-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.menu-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* KDS ticket queue and Pickup Board - same responsive card grid so a wide
+   window shows several columns and a narrow one collapses to a single
+   column, instead of a fixed-width list either way. */
+.board-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.menu-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); transform: translateY(-2px); }
+
+.swatch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.swatch.grid {
+  aspect-ratio: 1 / 1;
+  font-size: 1.5rem;
+}
+
+.modal .swatch {
+  aspect-ratio: 2 / 1;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.menu-item .body { padding: 0.6rem 0.75rem; }
+.menu-item .name { font-weight: 600; font-size: 0.95rem; }
+.menu-item .price { color: var(--muted); font-size: 0.85rem; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge.QUEUED, .badge.PAID { background: #fdecc8; color: #8a5a00; }
+.badge.IN_PREPARATION { background: #cfe8f7; color: #0b5b82; }
+.badge.READY { background: #d9f2e3; color: #0f6b3a; }
+.badge.COMPLETED { background: #e2ddd3; color: #4b4b4b; }
+.badge.CANCELLED { background: #fbdcd9; color: var(--danger); }
+
+button {
+  font: inherit;
+  background: var(--sbux-green);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+}
+button:hover { background: var(--sbux-green-dark); }
+button.tab-active { background: var(--sbux-gold); color: var(--sbux-green-dark); }
+button.tab-active:hover { background: var(--sbux-gold); }
+button.secondary { background: transparent; color: var(--sbux-green-dark); border: 1px solid var(--border); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.03em; }
+
+/* Lets a wide table (e.g. the Manager Dashboard's orders table) scroll
+   sideways within its own card on a narrow window, instead of forcing the
+   whole page to scroll horizontally. */
+.table-scroll { overflow-x: auto; }
+
+.ticket {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--sbux-green);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+}
+.ticket.aging { border-left-color: var(--sbux-gold); }
+.ticket .ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+.ticket .order-id { font-weight: 700; }
+.ticket .elapsed { color: var(--muted); font-size: 0.82rem; }
+.ticket ul { margin: 0.3rem 0; padding-left: 1.1rem; }
+.ticket .customizations { color: var(--muted); font-size: 0.85rem; }
+
+/* Small "i" badge next to a customer/guest name - hover (or tap, via the
+   native title tooltip) reveals the underlying orderId without cluttering
+   the main label with it. Used on KDS tickets, Pickup Board, and the
+   Manager Dashboard's orders table. */
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.35rem;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-style: normal;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.pos-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1.25rem; align-items: start; }
+@media (max-width: 900px) { .pos-layout { grid-template-columns: 1fr; } }
+
+.cart-line { display: flex; justify-content: space-between; align-items: start; padding: 0.5rem 0; border-bottom: 1px solid var(--border); gap: 0.5rem; }
+.cart-line .meta { font-size: 0.82rem; color: var(--muted); }
+.cart-total-row { display: flex; justify-content: space-between; padding: 0.2rem 0; }
+.cart-total-row.grand { font-weight: 700; font-size: 1.05rem; border-top: 1px solid var(--border); margin-top: 0.4rem; padding-top: 0.5rem; }
+
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center; z-index: 50;
+}
+.modal {
+  background: white; border-radius: var(--radius); padding: 1.25rem;
+  width: min(420px, 92vw); max-height: 85vh; overflow-y: auto;
+}
+.modal h3 { margin-top: 0; }
+.opt-group { margin-bottom: 0.9rem; }
+.opt-group .opt-label { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.3rem; }
+.opt-choice { display: flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; padding: 0.15rem 0; }
+
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem; }
+.stat-tile { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; }
+.stat-tile .value { font-size: 1.6rem; font-weight: 700; color: var(--sbux-green-dark); }
+.stat-tile .label { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+.hero {
+  background: linear-gradient(135deg, var(--sbux-green-dark), var(--sbux-green));
+  color: white; border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem;
+}
+.hero a.button-link {
+  display: inline-block; background: white; color: var(--sbux-green-dark);
+  padding: 0.55rem 1.1rem; border-radius: 6px; text-decoration: none; font-weight: 600;
+  margin: 0.35rem 0.5rem 0 0;
+}
+.muted { color: var(--muted); }
+.empty-state { color: var(--muted); text-align: center; padding: 2rem; }
+
+/* Small windows / phones - tighten spacing and typography so pages don't
+   feel like a squeezed-down desktop layout. */
+@media (max-width: 640px) {
+  .page { padding: 1rem; }
+  .topbar { padding: 0.6rem 1rem; }
+  .topbar nav a { margin-left: 0.85rem; font-size: 0.85rem; }
+  h1 { font-size: 1.25rem; }
+  .hero { padding: 1.25rem; }
+  .modal { padding: 1rem; }
+  .stat-tile .value { font-size: 1.35rem; }
+}
