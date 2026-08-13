@@ -60,7 +60,7 @@ no refresh, no polling.
                                                            │
                                                            ▼
                                                    Capella Server
-                                              bucket `starbucks` (source of truth)
+                                              bucket `brew` (source of truth)
 ```
 
 FastAPI (`app/main.py`) only serves the page shells, static JS/CSS, and
@@ -86,7 +86,7 @@ imports them.
 
 ## Data model
 
-Bucket **`starbucks`**, 4 scopes, 8 collections:
+Bucket **`brew`**, 4 scopes, 8 collections:
 
 | Scope | Collection | Holds |
 |---|---|---|
@@ -112,7 +112,7 @@ from your own DAM for a customer-facing build.
   Lite for JavaScript's minimums). Avoid private/incognito windows - they
   can restrict IndexedDB and make sync unreliable.
 - A Couchbase Capella cluster (a free trial cluster is enough) with:
-  1. A bucket named `starbucks` (Databases → your cluster → Buckets →
+  1. A bucket named `brew` (Databases → your cluster → Buckets →
      Create Bucket - Capella ties bucket creation to storage/pricing
      settings, so this one step has to happen in the UI, not this repo's
      scripts).
@@ -126,7 +126,7 @@ from your own DAM for a customer-facing build.
 ## Setup
 
 ```bash
-cd starbucks
+cd brew
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -234,7 +234,7 @@ App Services' own activity view) while the demo runs.
 ## Project layout
 
 ```
-starbucks/
+brew/
 ├── app/
 │   ├── main.py               FastAPI: page routes + static files only, no data API
 │   ├── config.py              Settings (.env) - CB_* for admin scripts, APP_SERVICES_* for the app
@@ -290,7 +290,7 @@ starbucks/
   `sudo apt-get install cmake build-essential`. Then retry. (This only
   affects the admin scripts' dependencies, not the live app.)
 - **`setup_capella.py` exits saying the bucket wasn't found**: create the
-  `starbucks` bucket in the Capella UI first (see
+  `brew` bucket in the Capella UI first (see
   [Prerequisites](#prerequisites)) - the SDK can create scopes/collections
   but not the bucket itself on Capella.
 - **Connection hangs / times out (admin scripts)**: check Settings →
@@ -325,7 +325,7 @@ starbucks/
 - **Banner goes green but the menu grid stays empty**: a green banner
   only means the Replicator connected and finished, not that it synced
   anything - this is almost always a server-side setup step, not a bug.
-  Check DevTools → Application → IndexedDB → `starbucks-pos` →
+  Check DevTools → Application → IndexedDB → `brew-pos` →
   `catalog.menu_items` first: if it's genuinely empty, the two most
   likely causes (in order) are **Import Filter** not enabled on that
   collection, or still left on Capella's default `doc.type == "mobile"`

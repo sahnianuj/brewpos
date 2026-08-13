@@ -335,7 +335,7 @@ async function submitOrder() {
       employeeId,
       employeeName,
       channelOrigin: employeeId ? "POS_REGISTER_1" : "MOBILE_APP",
-      paymentMethod: "STARBUCKS_CARD",
+      paymentMethod: "BREW_CARD",
       items: cart.map((l) => ({
         itemId: l.itemId,
         size: l.size,

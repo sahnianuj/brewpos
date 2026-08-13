@@ -11,7 +11,7 @@
     "orderStatus": "PAID",
     "payment": {
       "status": "COMPLETED",
-      "method": "STARBUCKS_CARD",
+      "method": "BREW_CARD",
       "amountPaid": 10.97,
       "transactionId": "TXN-9981241"
     },
@@ -128,7 +128,7 @@
     "orderStatus": "READY",
     "payment": {
       "status": "COMPLETED",
-      "method": "STARBUCKS_CARD",
+      "method": "BREW_CARD",
       "amountPaid": 10.32,
       "transactionId": "TXN-9981243"
     },
@@ -225,7 +225,7 @@
     "orderStatus": "PAID",
     "payment": {
       "status": "COMPLETED",
-      "method": "STARBUCKS_CARD",
+      "method": "BREW_CARD",
       "amountPaid": 12.13,
       "transactionId": "TXN-2231098"
     },
@@ -283,7 +283,7 @@
     "orderStatus": "CANCELLED",
     "payment": {
       "status": "REFUNDED",
-      "method": "STARBUCKS_CARD",
+      "method": "BREW_CARD",
       "amountPaid": 0.0,
       "transactionId": "TXN-9981199"
     },

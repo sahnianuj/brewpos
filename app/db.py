@@ -8,7 +8,7 @@ about connection setup - just `collection("catalog", "menu_items")` or
 
 Bucket / scope / collection layout (see docs/data-model.md for details):
 
-    starbucks
+    brew
     ├── catalog      stores, menu_items, modifiers
     ├── people       employees, customers
     ├── operations   orders, order_status_events
@@ -28,7 +28,7 @@ from couchbase.options import ClusterOptions, QueryOptions
 
 from app.config import get_settings
 
-logger = logging.getLogger("starbucks.db")
+logger = logging.getLogger("brew.db")
 
 # scope -> collection names, the single source of truth for the data model
 SCOPES: dict[str, list[str]] = {
@@ -87,7 +87,7 @@ def connect() -> Cluster:
         print(
             "[db]   Common causes: wrong CB_CONN_STRING (must be couchbases://...), "
             "wrong CB_USERNAME/CB_PASSWORD, your IP not in Capella's Allowed IP "
-            "Addresses list, or the `starbucks` bucket doesn't exist yet."
+            "Addresses list, or the `brew` bucket doesn't exist yet."
         )
         raise
     except Exception as e:
@@ -131,7 +131,7 @@ def scope(scope_name: str):
 
 
 def query(statement: str, *args: Any, **kwargs: Any) -> Iterable[dict]:
-    """Run a N1QL query scoped to the `starbucks` bucket and return rows.
+    """Run a N1QL query scoped to the `brew` bucket and return rows.
 
     Positional/keyword args are passed straight to QueryOptions, e.g.:
         query("SELECT ... WHERE storeId = $storeId", storeId="10492")

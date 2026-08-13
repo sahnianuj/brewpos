@@ -40,7 +40,7 @@ wss://<app-id>.apps.cloud.couchbase.com:4984/inventory
 
 ## 1. Prerequisites (skip if already done)
 
-- Capella cluster with the `starbucks` bucket created, provisioned, and
+- Capella cluster with the `brew` bucket created, provisioned, and
   seeded (`scripts/setup_capella.py` + `seed_data.py`) - App Endpoints are
   created against existing scopes/collections, they don't create them.
 - An App Services deployment attached to that cluster (**your cluster >
@@ -67,7 +67,7 @@ Repeat this whole procedure **4 times**, once per row of this table:
    App Endpoint.**
 2. **App Endpoint Name**: type the exact name from the table (`catalog`,
    `people`, `operations`, or `inventory`).
-3. **Linked Bucket**: select `starbucks`.
+3. **Linked Bucket**: select `brew`.
 4. **Scope**: select the matching scope from the table.
 5. **Linked Collections**: in the table shown, link every collection listed
    for that row (all of them - don't leave any unlinked, or that
@@ -339,7 +339,7 @@ was missed. Check for actual data, not just banner color.
 2. **The menu grid on `/pos` should show items.** If the banner is green
    but the grid is empty, work through these in order (all field-tested,
    all silent failures - nothing errors, it just shows nothing):
-   - **DevTools > Application > IndexedDB > `starbucks-pos` >
+   - **DevTools > Application > IndexedDB > `brew-pos` >
      `catalog.menu_items`** - does it actually contain documents? If
      empty, it's a server-side/import problem, not a rendering bug.
    - **Import Filter not enabled, or its default filter still active**

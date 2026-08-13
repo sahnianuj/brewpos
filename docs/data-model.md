@@ -1,12 +1,12 @@
 # Data Model
 
-Bucket: **`starbucks`** — 4 scopes, 8 collections. Scopes group documents
+Bucket: **`brew`** — 4 scopes, 8 collections. Scopes group documents
 by lifecycle/ownership (who writes them, how often, who needs to sync
 them), which is also how the App Services channel/role design in
 `sync-gateway/` is organized.
 
 ```
-starbucks
+brew
 ├── catalog                    (managed by store managers, low write volume)
 │   ├── stores
 │   ├── menu_items
@@ -129,7 +129,7 @@ brand-neutral card) — see README for why. The field also accepts
   "displayName": "Jordan Lee",
   "homeStoreId": "10492",
   "loyalty": { "tier": "GOLD", "starsBalance": 312, "starsToNextReward": 13 },
-  "paymentMethods": [{ "type": "STARBUCKS_CARD", "cardId": "SC-4471-8823", "balance": 42.1, "isDefault": true }],
+  "paymentMethods": [{ "type": "BREW_CARD", "cardId": "SC-4471-8823", "balance": 42.1, "isDefault": true }],
   "channels": ["user-cust_99214"]
 }
 ```
@@ -144,7 +144,7 @@ brand-neutral card) — see README for why. The field also accepts
   "employeeId": "cashier_128",
   "channelOrigin": "POS_REGISTER_1",
   "orderStatus": "PAID",
-  "payment": { "status": "COMPLETED", "method": "STARBUCKS_CARD", "amountPaid": 10.97, "transactionId": "TXN-9981241" },
+  "payment": { "status": "COMPLETED", "method": "BREW_CARD", "amountPaid": 10.97, "transactionId": "TXN-9981241" },
   "items": [
     {
       "lineItemId": "line_1",
@@ -223,7 +223,7 @@ now) - it's a straight `UNNEST` over `orders.items`:
 
 ```sql
 SELECT o.orderId, o.storeId, o.customerId, o.createdAt, i.*
-FROM `starbucks`.`operations`.`orders` AS o
+FROM `brew`.`operations`.`orders` AS o
 UNNEST o.items AS i
 WHERE o.storeId = $storeId
   AND i.station = $station
@@ -243,10 +243,10 @@ collections/channels it's synced (via a `Replicator`), and queries that
 local copy with the same N1QL/SQL++ dialect - just addressed differently,
 since there's no bucket locally, only collections:
 
-- No `` `starbucks`. `` bucket prefix.
+- No `` `brew`. `` bucket prefix.
 - The scope and collection are combined into one backtick-quoted,
   dotted identifier: `` `operations.orders` `` instead of
-  `` `starbucks`.`operations`.`orders` `` - see `COLLECTIONS` in
+  `` `brew`.`operations`.`orders` `` - see `COLLECTIONS` in
   `app/static/js/cbl/client.js` for the full list of 8.
 
 The Espresso/Warming KDS screens' live query (`app/static/js/kds.js`) is

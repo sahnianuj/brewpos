@@ -39,7 +39,7 @@ class OrderCreateRequest(BaseModel):
     orderName: Optional[str] = None
     employeeId: Optional[str] = None
     channelOrigin: str = "POS_REGISTER_1"
-    paymentMethod: str = "STARBUCKS_CARD"
+    paymentMethod: str = "BREW_CARD"
     items: list[OrderLineItemIn]
 
 

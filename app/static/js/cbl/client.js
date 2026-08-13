@@ -33,7 +33,7 @@ export const COLLECTIONS = {
 // Mirrors the N1QL secondary indexes created server-side by
 // scripts/setup_capella.py, so the same query shapes stay fast locally.
 const DB_CONFIG = {
-  name: "starbucks-pos",
+  name: "brew-pos",
   version: 1,
   collections: {
     [COLLECTIONS.stores]: { indexes: ["storeId"] },

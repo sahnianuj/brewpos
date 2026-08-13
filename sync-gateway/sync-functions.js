@@ -1,5 +1,5 @@
 /**
- * App Services / Sync Gateway sync functions for the `starbucks` bucket.
+ * App Services / Sync Gateway sync functions for the `brew` bucket.
  *
  * Capella App Services assigns access control at the COLLECTION level (not
  * one global function branching on a `type` field, which was the old

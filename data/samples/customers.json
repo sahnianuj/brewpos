@@ -14,7 +14,7 @@
       "memberSince": "2021-05-02"
     },
     "paymentMethods": [
-      { "type": "STARBUCKS_CARD", "cardId": "SC-4471-8823", "balance": 42.1, "isDefault": true }
+      { "type": "BREW_CARD", "cardId": "SC-4471-8823", "balance": 42.1, "isDefault": true }
     ],
     "channels": ["user-cust_99214"]
   },
@@ -33,7 +33,7 @@
       "memberSince": "2024-11-19"
     },
     "paymentMethods": [
-      { "type": "STARBUCKS_CARD", "cardId": "SC-7723-1190", "balance": 5.25, "isDefault": true },
+      { "type": "BREW_CARD", "cardId": "SC-7723-1190", "balance": 5.25, "isDefault": true },
       { "type": "CREDIT_CARD", "cardId": "VISA-...4471", "isDefault": false }
     ],
     "channels": ["user-cust_55821"]
@@ -53,7 +53,7 @@
       "memberSince": "2019-08-27"
     },
     "paymentMethods": [
-      { "type": "STARBUCKS_CARD", "cardId": "SC-2290-4456", "balance": 0.0, "isDefault": true },
+      { "type": "BREW_CARD", "cardId": "SC-2290-4456", "balance": 0.0, "isDefault": true },
       { "type": "APPLE_PAY", "cardId": "APAY-...", "isDefault": false }
     ],
     "channels": ["user-cust_10045"]

@@ -152,7 +152,7 @@ def main() -> None:
             customerId=customer["customerId"] if customer else None,
             employeeId=employee["employeeId"] if employee else None,
             channelOrigin="POS_REGISTER_1" if employee else "MOBILE_APP",
-            paymentMethod=random.choice(["STARBUCKS_CARD", "CREDIT_CARD", "APPLE_PAY", "CASH"]),
+            paymentMethod=random.choice(["BREW_CARD", "CREDIT_CARD", "APPLE_PAY", "CASH"]),
             items=random_items(menu_items, modifiers_by_type),
         )
         order = order_service.create_order(req)
