@@ -126,7 +126,7 @@ from your own DAM for a customer-facing build.
 ## Setup
 
 ```bash
-cd brew
+cd brewpos
 python3 -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
