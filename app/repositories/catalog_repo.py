@@ -18,14 +18,21 @@ def get_store(store_id: str) -> dict | None:
 
 
 def list_stores() -> list[dict]:
+    # `type = "store"` excludes App Services' own sync-metadata docs
+    # (`_sync:local:checkpoint/...`, `_sync:syncInfo`), which otherwise
+    # come back from an unfiltered SELECT * over the collection.
     rows = db.query(
-        f"SELECT s.* FROM `{BUCKET}`.`catalog`.`stores` AS s ORDER BY s.name"
+        f"SELECT s.* FROM `{BUCKET}`.`catalog`.`stores` AS s "
+        'WHERE s.type = "store" ORDER BY s.name'
     )
     return list(rows)
 
 
 def list_menu_items(category: str | None = None) -> list[dict]:
-    statement = f"SELECT m.* FROM `{BUCKET}`.`catalog`.`menu_items` AS m WHERE m.isActive = true"
+    statement = (
+        f"SELECT m.* FROM `{BUCKET}`.`catalog`.`menu_items` AS m "
+        'WHERE m.type = "menu_item" AND m.isActive = true'
+    )
     params = {}
     if category:
         statement += " AND m.category = $category"
@@ -43,7 +50,11 @@ def get_menu_item(item_id: str) -> dict | None:
 
 
 def list_modifiers() -> list[dict]:
+    # `type = "modifier"` excludes App Services' own sync-metadata docs
+    # (`_sync:local:checkpoint/...`, `_sync:syncInfo`), which otherwise
+    # come back from an unfiltered SELECT * over the collection.
     rows = db.query(
-        f"SELECT mo.* FROM `{BUCKET}`.`catalog`.`modifiers` AS mo ORDER BY mo.modifierType, mo.label"
+        f"SELECT mo.* FROM `{BUCKET}`.`catalog`.`modifiers` AS mo "
+        'WHERE mo.type = "modifier" ORDER BY mo.modifierType, mo.label'
     )
     return list(rows)

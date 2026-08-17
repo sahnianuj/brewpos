@@ -97,7 +97,6 @@ def _record_event(
     existing = order_repo.list_events_for_order(order_id)
     doc_id, event_id = _next_event_id(order_id, len(existing))
     event = {
-        "_id": doc_id,
         "type": "order_status_event",
         "eventId": event_id,
         "orderId": order_id,
@@ -114,7 +113,7 @@ def _record_event(
     }
     if note:
         event["note"] = note
-    order_repo.insert_event(event)
+    order_repo.insert_event(doc_id, event)
 
 
 def create_order(req: OrderCreateRequest) -> dict:
@@ -201,7 +200,6 @@ def create_order(req: OrderCreateRequest) -> dict:
         channels.append(f"user-{req.customerId}")
 
     order_doc = {
-        "_id": key,
         "type": "order",
         "orderId": order_id,
         "orderName": _order_name(req.customerId, req.orderName),

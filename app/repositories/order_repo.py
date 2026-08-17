@@ -108,8 +108,8 @@ def list_orders_for_customer(customer_id: str, limit: int = 25) -> list[dict]:
     return list(db.query(statement, customerId=customer_id, limit=limit))
 
 
-def insert_event(event_doc: dict) -> None:
-    db.collection(*EVENTS).upsert(event_doc["_id"], event_doc)
+def insert_event(key: str, event_doc: dict) -> None:
+    db.collection(*EVENTS).upsert(key, event_doc)
 
 
 def list_events_for_order(order_id: str) -> list[dict]:

@@ -7,7 +7,10 @@ The bucket itself has to be created first, via the Capella UI or API -
 Capella ties bucket creation to cluster storage/pricing settings, so it's
 not something the Couchbase SDK can do for you. See README.md > Setup.
 
-Safe to re-run: every create call tolerates "already exists".
+Safe to re-run: scope/collection creation tolerates "already exists", and
+indexes are dropped and recreated each run so their definitions never drift
+from what's listed below (and any primary index left over from an older
+version of this script gets dropped too).
 
 Usage:
     python scripts/setup_capella.py
@@ -27,22 +30,38 @@ from couchbase.exceptions import (
 from app import db
 from app.config import get_settings
 
-PRIMARY_INDEX_COLLECTIONS = [
-    ("catalog", "stores"),
-    ("catalog", "menu_items"),
-    ("catalog", "modifiers"),
-    ("people", "employees"),
-    ("people", "customers"),
-    ("operations", "orders"),
-    ("operations", "order_status_events"),
-    ("inventory", "stock_levels"),
-]
-
-# A handful of targeted secondary indexes to back the query patterns the
-# app actually runs (KDS queues, pickup board, order lookup by orderId,
-# customer order history). Primary indexes above are fine for a demo but
-# would not be how you'd index this in production.
+# Targeted secondary indexes that back every query pattern the app actually
+# runs (KDS queues, pickup board, order lookup by orderId, customer order
+# history, and the unfiltered "list everything" reads the setup/catalog
+# pages do). No primary indexes: each collection's queries are covered by
+# a purpose-built GSI instead, which is how you'd index this outside a demo
+# too.
 SECONDARY_INDEXES = [
+    # catalog.stores - list_stores() filters type = "store" (this excludes
+    # App Services' own sync-metadata docs living in the same collection,
+    # e.g. `_sync:local:checkpoint/...`) and orders by name.
+    ("idx_stores_type_name", "catalog", "stores", "type, name"),
+    # catalog.menu_items - list_menu_items() filters type + isActive (+
+    # optional category) and orders by category, name.
+    (
+        "idx_menu_items_active",
+        "catalog",
+        "menu_items",
+        "type, isActive, category, name",
+    ),
+    # catalog.modifiers - list_modifiers() filters type = "modifier" and
+    # orders by modifierType, label.
+    (
+        "idx_modifiers_type_label",
+        "catalog",
+        "modifiers",
+        "type, modifierType, label",
+    ),
+    # people.employees - list_employees() filters type + storeId.
+    ("idx_employees_store", "people", "employees", "type, storeId"),
+    # people.customers - list_customers() filters type = "customer" and
+    # orders by displayName.
+    ("idx_customers_name", "people", "customers", "type, displayName"),
     (
         "idx_orders_store_status",
         "operations",
@@ -52,7 +71,8 @@ SECONDARY_INDEXES = [
     ("idx_orders_orderId", "operations", "orders", "orderId"),
     ("idx_orders_customer", "operations", "orders", "customerId"),
     ("idx_events_orderId", "operations", "order_status_events", "orderId, timestamp"),
-    ("idx_employees_store", "people", "employees", "storeId"),
+    # inventory.stock_levels - reads/writes here are all KV by key (see
+    # inventory_repo.py); this index exists for ad hoc/ops querying only.
     ("idx_stock_store", "inventory", "stock_levels", "storeId"),
 ]
 
@@ -77,18 +97,35 @@ def ensure_scopes_and_collections(bucket_name: str) -> None:
                 print(f"    collection `{scope_name}`.`{collection_name}` already exists")
 
 
-def ensure_indexes(bucket_name: str) -> None:
-    for scope_name, collection_name in PRIMARY_INDEX_COLLECTIONS:
+def drop_primary_indexes(bucket_name: str) -> None:
+    """Drop any primary index on our collections, so a rerun stays GSI-only
+    even on a cluster that was originally set up before this script stopped
+    creating primary indexes."""
+    seen = {(scope_name, collection_name) for _, scope_name, collection_name, _ in SECONDARY_INDEXES}
+    for scope_name, collection_name in sorted(seen):
         statement = (
-            f"CREATE PRIMARY INDEX IF NOT EXISTS ON "
+            f"DROP PRIMARY INDEX IF EXISTS ON "
             f"`{bucket_name}`.`{scope_name}`.`{collection_name}`"
         )
         db.cluster().query(statement).execute()
-        print(f"  primary index ready on `{scope_name}`.`{collection_name}`")
+    print(f"  primary indexes dropped (if any existed) on {len(seen)} collections")
+
+
+def ensure_indexes(bucket_name: str) -> None:
+    drop_primary_indexes(bucket_name)
 
     for index_name, scope_name, collection_name, keys in SECONDARY_INDEXES:
+        # DROP + CREATE rather than CREATE ... IF NOT EXISTS: an existing
+        # index with this name but stale keys (e.g. after this list changes)
+        # would otherwise silently keep serving the old definition forever.
+        drop_statement = (
+            f"DROP INDEX `{index_name}` IF EXISTS ON "
+            f"`{bucket_name}`.`{scope_name}`.`{collection_name}`"
+        )
+        db.cluster().query(drop_statement).execute()
+
         statement = (
-            f"CREATE INDEX `{index_name}` IF NOT EXISTS ON "
+            f"CREATE INDEX `{index_name}` ON "
             f"`{bucket_name}`.`{scope_name}`.`{collection_name}`({keys})"
         )
         db.cluster().query(statement).execute()

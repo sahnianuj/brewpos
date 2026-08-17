@@ -18,8 +18,12 @@ def get_customer(customer_id: str) -> dict | None:
 
 
 def list_customers() -> list[dict]:
+    # `type = "customer"` excludes App Services' own sync-metadata docs
+    # (`_sync:local:checkpoint/...`, `_sync:syncInfo`), which otherwise
+    # come back from an unfiltered SELECT * over the collection.
     rows = db.query(
-        f"SELECT c.* FROM `{BUCKET}`.`people`.`customers` AS c ORDER BY c.displayName"
+        f"SELECT c.* FROM `{BUCKET}`.`people`.`customers` AS c "
+        'WHERE c.type = "customer" ORDER BY c.displayName'
     )
     return list(rows)
 
@@ -35,7 +39,8 @@ def get_employee(employee_id: str) -> dict | None:
 def list_employees(store_id: str) -> list[dict]:
     rows = db.query(
         f"SELECT e.* FROM `{BUCKET}`.`people`.`employees` AS e "
-        "WHERE e.storeId = $storeId ORDER BY e.`role`, e.displayName",
+        'WHERE e.type = "employee" AND e.storeId = $storeId '
+        "ORDER BY e.`role`, e.displayName",
         storeId=store_id,
     )
     return list(rows)

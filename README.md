@@ -221,9 +221,24 @@ amber ("App Services isn't configured"), blue ("Connecting..."), green
    ```bash
    python scripts/simulate_traffic.py --interval 4
    ```
-   Add `--auto-advance` for a fully hands-off background demo. This writes
-   straight to Capella Server via the admin path, same as
-   `generate_orders.py` - and you'll see it show up live in the browser
+   Add `--auto-advance` for a fully hands-off background demo - each order
+   then plays out its own KDS lifecycle (`QUEUED` -> `IN_PREPARATION`
+   ("Start") -> `READY`) and, once every item is ready, sits on the
+   pickup board before being auto-marked picked up, so all four screens
+   (Register, both KDS stations, Pickup Board) stay live without any
+   clicking:
+   ```bash
+   python scripts/simulate_traffic.py --auto-advance
+   ```
+   Tune how long each stage takes with `--start-delay` (QUEUED -> Start,
+   default 3s), `--prep-delay` (Start -> Ready, default 7s), and
+   `--pickup-delay` (Ready -> picked up, default 12s) - handy for
+   speeding up a live demo:
+   ```bash
+   python scripts/simulate_traffic.py --auto-advance --start-delay 2 --prep-delay 5 --pickup-delay 8
+   ```
+   All of this writes straight to Capella Server via the admin path, same
+   as `generate_orders.py` - and you'll see it show up live in the browser
    tabs exactly like a real register would, since App Services doesn't
    care whether a write came from Couchbase Lite or the Server SDK.
 
